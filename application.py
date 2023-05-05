@@ -18,7 +18,7 @@ def predict_point():
     if request.method == 'GET':
         return render_template('index.html')
     else:
-        with open('notebooks/model.pkl','rb') as f:
+        with open('notebook/model.pkl','rb') as f:
             model = pickle.load(f)
         sepal_length = float(request.form.get('sepal_length'))
         sepal_width = float(request.form.get('sepal_width'))
@@ -42,4 +42,4 @@ def predict_point():
 # Running the app
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
-
+    
